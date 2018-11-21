@@ -32,6 +32,16 @@ public class Grafo {
 		}
 
 		while (!this.colaPrioridad.isEmpty()) {
+			nodoW = this.colaPrioridad.peek().getNodoDestino();
+			
+			for (int i = 0; i < this.cantidadNodos; i++) {
+				if (this.matriz.getValor(nodoW, i) != Integer.MAX_VALUE) {
+					// es Adyacente a nodoW
+					if (costosNodoInicialAN[nodoW] + this.matriz.getValor(nodoW, i) < costosNodoInicialAN[i]) {
+						costosNodoInicialAN[i] = costosNodoInicialAN[nodoW] + this.matriz.getValor(nodoW, i);
+					}
+				}
+			}
 			
 		}
 	}
