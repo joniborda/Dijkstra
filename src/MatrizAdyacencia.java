@@ -16,14 +16,18 @@ public class MatrizAdyacencia {
 	}
 
 	public void setValor(int fila, int columna, int valor) {
-		if (fila == columna)
+		if (fila == columna) {
 			this.matriz[fila][columna] = Integer.MAX_VALUE;
+		}
 
 		this.matriz[fila][columna] = valor;
 
 	}
 
 	public int getValor(int fila, int columna) {
+		if (fila == columna) {
+			return Integer.MAX_VALUE;
+		}
 		return this.matriz[fila][columna];
 	}
 
